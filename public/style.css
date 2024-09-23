@@ -3,3 +3,44 @@
     padding: 0;
     margin: 0;
 }
+
+body{
+    font-family: Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
+}
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    padding: 10px;
+    border-bottom: 2px solid gray;
+    background-color: rgb(235, 235, 235);
+}
+
+#main-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+#header{
+    text-align: center;
+}
+
+#footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}
+button{
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}

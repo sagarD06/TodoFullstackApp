@@ -5,13 +5,18 @@ const z = require("zod");
 require("dotenv").config();
 const { UserModel, TodoModel, dbConnect } = require("./db");
 const { auth } = require("./middleware");
+const path = require("path");
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
-app.use(express.static("./public")); // renders frontend
-
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static("./public")); // renders frontend
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 // Connect to MongoDB
 dbConnect();
 
